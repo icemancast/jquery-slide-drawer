@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+
+<title>jQery Slide Drawer Plugin Demo</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+
+</head>
+
+<body>
+	
+	<section class="drawer">
+		<!-- <div> -->
+			<header class="clickme">Current Events</header>
+		<!-- </div> -->
+		<div class="drawer-content">
+			<div class="drawer-items">
+				<ul>
+					<li>
+						<a href="#">
+						<div class="title">Item 1</div>
+						<div class="time">8:00am / </div>
+						<div class="location">Some Location</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+						<div class="title">Item 2</div>
+						<div class="time">8:00am / </div>
+						<div class="location">Central Location</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+						<div class="title">Item 3</div>
+						<div class="time">8:00am / </div>
+						<div class="location">Barn</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+						<div class="title">Item 4</div>
+						<div class="time">8:00am / </div>
+						<div class="location">Cover</div>
+						</a>
+					</li>
+				</ul>
+			</div>	
+		</div>
+	</section>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slidedrawer.js"></script>
+	<script>
+	$(function(){
+		$('.drawer').slideDrawer();
+	});
+	</script>
+</body>
+
+</html>

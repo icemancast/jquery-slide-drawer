@@ -8,65 +8,64 @@
  * Requires: jQuery v1.7.1 or later
 */
 
-;(function($) {
+;(function ($, window, document, undefined) {
+
+    // Create defaults variables to override
+    var pluginName = "slideDrawer";
+    var defaults = {
+        var1: "value",
+		var2: "value"
+    };
 	
-	var defaults = {
-		var1: 'here',
-		var2: 'here',
-	}
-	
-	$.fn.slideDrawer = function(options) {
+    // Plugin constructor
+    function SlideDrawer(element, options) {
+        this.element = element;
+        this.options = $.extend({}, defaults, options);
+        this._defaults = defaults;
+        this._name = pluginName;
+        this.init();
+    }
+
+	// Prototype
+    SlideDrawer.prototype = {
 		
-		var config = $.extend({}, defaults, options);
-		
-		
-		
-		// Slide drawer ---------------------------//
-			var slideEvents = {
-		
-				container: $('#events'),
-		
-				config: {
-					fullHeight: 137,
-					hiddenHeight: 28
-				},
-		
-				toggle: function() {
-					// check height then call function
-					var div = slideEvents.container,
-						divHeight = div.height(),
-						fullHeight = slideEvents.config.fullHeight,
-						hiddenHeight = slideEvents.config.hiddenHeight;
-						
-					(divHeight === fullHeight) ? slideEvents.slide( div, hiddenHeight ): slideEvents.slide( div, fullHeight );
+        init: function () {
 			
-				},
-		
-				slide: function( div, height, speed ) {
-					div.animate({
-						'height': height
-					}, speed || 300 );
-				},
-		
-			};
-	
 			setTimeout(function() {
-				slideEvents.slide( $('#events'), slideEvents.config.hiddenHeight, 1000 );
+				this.slide( $('#events'), this.config.hiddenHeight, 1000 );
 			}, 5000);
 	
-			$('#clickme').on('click', slideEvents.toggle);
+			$('.clickme').on('click', this.toggle);
+			
+			// return this;
+        },
 		
+		// Toggle function
+		toggle: function() {
+			// check height then call function
+			var div = slideEvents.container,
+				divHeight = div.height(),
+				fullHeight = this.config.fullHeight,
+				hiddenHeight = this.config.hiddenHeight;
+						
+			(divHeight === fullHeight) ? this.slide( div, hiddenHeight ): this.slide( div, fullHeight );
+		},
 		
-		
-		
-		
-		
-		
-		
-		return this;
-		
-	}
-	
-}(jQuery));
-	  
-	  
+		// Slide function
+		slide: function( div, height, speed ) {
+			div.animate({
+				'height': height
+			}, speed || 300 );
+		},
+    };
+
+	// Function wrapper
+    $.fn[pluginName] = function (options) {
+        return this.each(function () {
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" + pluginName, new SlideDrawer(this, options));
+            }
+        });
+    };
+
+})(jQuery, window, document);
