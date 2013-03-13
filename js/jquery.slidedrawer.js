@@ -1,5 +1,5 @@
 /*!
- * jQuery Poll plugin
+ * jQuery Slide Drawer
  * Examples and documentation at: http://www.icastwork.com
  * Copyright (c) 2013 Isaac Castillo
  * Version: 1.0 (28-FEB-2013)
@@ -8,40 +8,26 @@
  * Requires: jQuery v1.7.1 or later
 */
 
-;(function ($, window, document, undefined) {
-
-    // Create defaults variables to override
-    var pluginName = "slideDrawer";
-    var defaults = {
-        var1: "value",
-		var2: "value"
-    };
+;(function ($) {
 	
-    // Plugin constructor
-    function SlideDrawer(element, options) {
-        this.element = element;
-        this.options = $.extend({}, defaults, options);
-        this._defaults = defaults;
-        this._name = pluginName;
-        this.init();
-    }
-
-	// Prototype
-    SlideDrawer.prototype = {
+	var drawer = {
 		
-        init: function () {
-			
+		init: function (options, div) {
+		
+			// hiddenHeight = 
+			// console.log(div);
+		
 			setTimeout(function() {
-				this.slide( $('#events'), this.config.hiddenHeight, 1000 );
+				drawer.slide( div, options.drawerHiddenHeight, 1000 );
 			}, 5000);
-	
-			$('.clickme').on('click', this.toggle);
 			
-			// return this;
-        },
+			// console.log(options.slideSpeed);
 		
-		// Toggle function
+		},
+		
+		//Toggle function
 		toggle: function() {
+			
 			// check height then call function
 			var div = slideEvents.container,
 				divHeight = div.height(),
@@ -53,19 +39,86 @@
 		
 		// Slide function
 		slide: function( div, height, speed ) {
-			div.animate({
+			$(div).animate({
 				'height': height
 			}, speed || 300 );
-		},
-    };
+		}
+	};
 
 	// Function wrapper
-    $.fn[pluginName] = function (options) {
-        return this.each(function () {
-            if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new SlideDrawer(this, options));
-            }
-        });
-    };
+    $.fn.slideDrawer = function ( options ) {
+		
+		drawerHeight = this.height();
+		drawerContentHeight = this.children('.drawer-content').height();
+		drawerHiddenHeight = drawerHeight - drawerContentHeight;
+    
+	    var defaults = {
+	        showDrawer: false, /* Drawer hidden on load by default */
+			slideSpeed: 300, /* Slide drawer speed 3 secs by default */
+			slideTimeout: true, /* Sets time out if set to true showDrawer false will be ignored */
+			slideTimeoutCount: 5000, /* How long to wait before sliding drawer */
+			drawerContentHeight: drawerContentHeight, /* Full div height */
+			drawerHeight: drawerHeight, /* Not to include tab so you have something to toggle */
+			drawerHiddenHeight: drawerHiddenHeight /* Height of div when hidden full height minus content height */
+	    };
+		
+		var options = $.extend(defaults, options);
+		
+		return this.each(function() {
+			
+			drawer.init(options, this);			
+    		$('.clickme').on('click', drawer.toggle);
+    	
+		});
+	};
+	
+})(jQuery);
 
-})(jQuery, window, document);
+
+
+
+
+
+
+	// var drawer = {
+		
+        // init: function ( options ) {
+			
+			// setTimeout(function() {
+// 				this.slide( $('#events'), this.config.hiddenHeight, 1000 );
+// 			}, 5000);
+
+			// console.log('tester');
+	// 
+	// 		
+	//         },
+		
+		// Toggle function
+		// toggle: function() {
+// 			
+// 			console.log('lalalalalala');
+// 			// check height then call function
+// 			var div = slideEvents.container,
+// 				divHeight = div.height(),
+// 				fullHeight = this.config.fullHeight,
+// 				hiddenHeight = this.config.hiddenHeight;
+// 						
+// 			(divHeight === fullHeight) ? this.slide( div, hiddenHeight ): this.slide( div, fullHeight );
+// 		},
+		
+		// Slide function
+		// slide: function( div, height, speed ) {
+	// 		div.animate({
+	// 			'height': height
+	// 		}, speed || 300 );
+	// 	}
+	// };
+       
+
+	// Function wrapper
+    // $.fn.slideDrawer = function ( options ) {
+  // 		
+  // 	    
+  // 		
+  // 		
+  //   };

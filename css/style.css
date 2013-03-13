@@ -21,15 +21,16 @@ html, body { margin: 0; padding: 0; }
 	height: 25px;
 	line-height: 25px;
 	margin: auto;
+	overflow: hidden;
 	padding: 5px;
 	text-align: center;
 	width: 150px;
 	
 	/* Radius round corners - change radius or delete if need be */
-	-moz-border-radius-topleft: 15px;
-	-moz-border-radius-topright: 15px;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
+	-moz-border-radius-topleft: 25px 40px;
+	-moz-border-radius-topright: 25px 40px;
+	border-top-left-radius: 25px 40px;
+	border-top-right-radius: 25px 40px;
 }
 
 .drawer-content {
