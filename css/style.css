@@ -1,0 +1,158 @@
+html, body { margin: 0; padding: 0; }
+/*body { background: #000000; }*/
+
+.drawer {
+	bottom: 0px;
+	height: 140px;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	z-index: 5; /* make this what you need to */
+}
+
+/*.drawer div {
+	width: 100%;
+}*/
+
+.drawer header {
+	background: #000000; /* add image if you want */
+	color: #ffffff;
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	margin: auto;
+	overflow: hidden;
+	padding: 5px;
+	text-align: center;
+	width: 150px;
+	
+	/* Radius round corners - change radius or delete if need be */
+	-moz-border-radius-topleft: 25px 40px;
+	-moz-border-radius-topright: 25px 40px;
+	border-top-left-radius: 25px 40px;
+	border-top-right-radius: 25px 40px;
+}
+
+.drawer-content {
+	background: url(../images/bg.png);
+	border-collapse: collapse;
+	border-top: 2px solid #000000;
+	height: 110px;
+	width: 100%;
+}
+
+.clickme {
+  cursor: pointer;
+}
+
+.drawer-items {
+	margin: auto;
+/*	width: 1000px; /* change to width you need */*/
+}
+
+.drawer-items ul {
+  margin: 0px;
+/*  width: auto;*/
+}
+
+.drawer-items li {
+  float: left;
+  list-style: none;
+  margin-left: 0px;
+  width: 241px;
+}
+
+.drawer-items li a {
+  color: #fff;
+  display: block;
+  height: 86px;
+  padding: 12px;
+  text-decoration: none;
+  width: 217px;
+}
+
+.drawer-items li a:hover {
+  background: #bd4929;
+}
+
+
+
+
+
+
+
+/* Home page event section area ===================================================== */
+#events {
+  bottom: 0px;
+  height: 137px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 5; }
+
+#events header {
+  background: url(images/tab-events.png) no-repeat;
+  color: #fff;
+  display: block;
+  float: left;
+  height: 21px;
+  margin-left: 417px;
+  padding-top: 3px;
+  text-align: center;
+  width: 150px; }
+
+#events header a {
+  color: #fff;
+  text-decoration: none; }
+
+#event-area {
+  background: url(images/header.png);
+  border-collapse: collapse;
+  border-top: 3px solid #000;
+  float: left;
+  height: 110px;
+  width: 100%; }
+
+#event-items ul {
+  margin: 0px; }
+
+#event-items li {
+  float: left;
+  list-style: none;
+  margin-left: 0px;
+  width: 241px; }
+
+#event-items li a {
+  color: #fff;
+  display: block;
+  height: 86px;
+  padding: 12px;
+  text-decoration: none;
+  width: 217px; }
+
+#event-items li a:hover {
+  background: #bd4929; }
+
+#event-items .title {
+  font-size: 28px;
+  height: 56px;
+  line-height: 1.1;
+  overflow: hidden;
+  text-transform: uppercase;
+  word-wrap: break-word; }
+
+#event-items .time, #event-items .location {
+  display: block;
+  float: left;
+  font-size: 14px;
+  height: 14px;
+  line-height: 14px;
+  padding-left: 15px;
+  margin: 5px 3px auto; }
+
+#event-items .time {
+  background: url(images/icon-time.png) no-repeat; }
+
+#event-items .location {
+  background: url(images/icon-location.png) no-repeat; }
+
