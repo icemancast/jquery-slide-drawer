@@ -13,29 +13,29 @@
 	var drawer = {
 		
 		init: function ( options, div ) {
-			
-			// $('.clickme').on('click', drawer.toggle);
-			$('.clickme').click(drawer.toggle);
-			
+						
 			if(options.showDrawer == true && options.slideTimeout == true)
 			{
 				setTimeout(function() {
-					drawer.slide( div, options.drawerHiddenHeight, options.slideSpeed );
+					drawer.slide(div, options.drawerHiddenHeight, options.slideSpeed);
 				}, options.slideTimeoutCount);
 			} 
 			else if(options.showDrawer == false)
 			{
 				// Set drawer hidden on load
-				drawer.slide( div, options.drawerHiddenHeight, options.slideSpeed );
+				drawer.slide(div, options.drawerHiddenHeight, options.slideSpeed);
 			}
+			
+			// Toggle drawer when clicked
+			$('.clickme').on('click', function(){
+				drawer.toggle(options, div);
+			});
+			
 		},
 		
 		//Toggle function
 		toggle: function(options, div) {
-			
-			console.log('test');
-			// console.log(drawer.init.options.drawerHeight);
-			(140 === options.drawerHeight) ? drawer.slide( div, options.drawerHiddenHeight, options.slideSpeed ) : drawer.slide( div, options.drawerHeight, options.slideSpeed );
+			($(div).height()+options.borderHeight === options.drawerHeight) ? drawer.slide( div, options.drawerHiddenHeight, options.slideSpeed ) : drawer.slide( div, options.drawerHeight-options.borderHeight, options.slideSpeed );
 		},
 		
 		// Slide animation function
@@ -52,7 +52,7 @@
 		var drawerContent = this.children('.drawer-content'), /* Content height of drawer */
 			borderHeight = parseInt(drawerContent.css('border-top-width')); /* Border height of content */
 		
-		drawerHeight = this.height(); /* Total drawer height */
+		drawerHeight = this.height() + borderHeight; /* Total drawer height + border height */
 		drawerContentHeight = drawerContent.height() - borderHeight; /* Total drawer content height minus border top */
 		drawerHiddenHeight = drawerHeight - drawerContentHeight; /* How much to hide the drawer, total height minus content height */
     
@@ -63,7 +63,8 @@
 				slideTimeoutCount: 5000, /* How long to wait before sliding drawer */
 				drawerContentHeight: drawerContentHeight, /* Div content height no including tab or border */
 				drawerHeight: drawerHeight, /* Full div height */
-				drawerHiddenHeight: drawerHiddenHeight /* Height of div when hidden full height minus content height */
+				drawerHiddenHeight: drawerHiddenHeight, /* Height of div when hidden full height minus content height */
+				borderHeight: borderHeight /* border height if set in css you cann overwrite but best just leave alone */
 	    };
 					
 		/* Overwrite defaults */
@@ -77,52 +78,3 @@
 	};
 	
 })(jQuery);
-
-
-
-
-
-
-
-	// var drawer = {
-		
-        // init: function ( options ) {
-			
-			// setTimeout(function() {
-// 				this.slide( $('#events'), this.config.hiddenHeight, 1000 );
-// 			}, 5000);
-
-			// console.log('tester');
-	// 
-	// 		
-	//         },
-		
-		// Toggle function
-		// toggle: function() {
-// 			
-// 			console.log('lalalalalala');
-// 			// check height then call function
-// 			var div = slideEvents.container,
-// 				divHeight = div.height(),
-// 				fullHeight = this.config.fullHeight,
-// 				hiddenHeight = this.config.hiddenHeight;
-// 						
-// 			(divHeight === fullHeight) ? this.slide( div, hiddenHeight ): this.slide( div, fullHeight );
-// 		},
-		
-		// Slide function
-		// slide: function( div, height, speed ) {
-	// 		div.animate({
-	// 			'height': height
-	// 		}, speed || 300 );
-	// 	}
-	// };
-       
-
-	// Function wrapper
-    // $.fn.slideDrawer = function ( options ) {
-  // 		
-  // 	    
-  // 		
-  // 		
-  //   };
