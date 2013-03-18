@@ -12,6 +12,10 @@
 
 <body>
 	
+	<div class="background-image">
+		<img src="http://icastwork.com/projects/slidedrawer/images/005.jpg" />
+	</div>
+	
 	<section class="drawer">
 		<!-- <div> -->
 			<header class="clickme">Current Events</header>
@@ -22,29 +26,29 @@
 					<li>
 						<a href="#">
 						<div class="title">Item 1</div>
-						<div class="time">8:00am / </div>
-						<div class="location">Some Location</div>
+						<div class="time">8:00am</div>
+						<div class="location">Other Info</div>
 						</a>
 					</li>
 					<li>
 						<a href="#">
 						<div class="title">Item 2</div>
-						<div class="time">8:00am / </div>
-						<div class="location">Central Location</div>
+						<div class="time">8:00am</div>
+						<div class="location">Other Info</div>
 						</a>
 					</li>
 					<li>
 						<a href="#">
 						<div class="title">Item 3</div>
-						<div class="time">8:00am / </div>
-						<div class="location">Barn</div>
+						<div class="time">8:00am</div>
+						<div class="location">Other Info</div>
 						</a>
 					</li>
 					<li>
 						<a href="#">
 						<div class="title">Item 4</div>
-						<div class="time">8:00am / </div>
-						<div class="location">Cover</div>
+						<div class="time">8:00am</div>
+						<div class="location">Other Info</div>
 						</a>
 					</li>
 				</ul>
@@ -58,6 +62,7 @@
 	$(function(){
 		$('.drawer').slideDrawer({
 			showDrawer: true,
+			slideTimeout: false
 		});
 	});
 	</script>

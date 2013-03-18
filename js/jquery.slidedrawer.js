@@ -13,7 +13,8 @@
 	var drawer = {
 		
 		init: function ( options, div ) {
-						
+			
+			// Set 			
 			if(options.showDrawer == true && options.slideTimeout == true)
 			{
 				setTimeout(function() {

@@ -1,5 +1,7 @@
 html, body { margin: 0; padding: 0; }
-/*body { background: #000000; }*/
+body {
+	font: 13px/1.5 "Verdana", sans-serif; /* Change your font */
+}
 
 .drawer {
 	bottom: 0px;
@@ -9,10 +11,6 @@ html, body { margin: 0; padding: 0; }
 	width: 100%;
 	z-index: 5; /* make this what you need to */
 }
-
-/*.drawer div {
-	width: 100%;
-}*/
 
 .drawer header {
 	background: #000000; /* add image if you want */
@@ -47,19 +45,18 @@ html, body { margin: 0; padding: 0; }
 
 .drawer-items {
 	margin: auto;
-/*	width: 1000px; /* change to width you need */*/
+	width: 960px;
 }
 
 .drawer-items ul {
   margin: 0px;
-/*  width: auto;*/
 }
 
 .drawer-items li {
   float: left;
   list-style: none;
   margin-left: 0px;
-  width: 241px;
+  width: 200px;
 }
 
 .drawer-items li a {
@@ -68,91 +65,37 @@ html, body { margin: 0; padding: 0; }
   height: 86px;
   padding: 12px;
   text-decoration: none;
-  width: 217px;
+  width: 176px;
 }
 
 .drawer-items li a:hover {
-  background: #bd4929;
+  background: #bd4929; /* change link hover color */
 }
 
+.drawer-items .title {
+	color: #c4c4c4;
+	font-size: 20px;
+	line-height: 1.1;
+}
 
+/* Don't need these below it is just for full size image
+-------------------------------------------------------- */
+.background-image {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 1;
+}
 
-
-
-
-
-/* Home page event section area ===================================================== */
-#events {
-  bottom: 0px;
-  height: 137px;
-  overflow: hidden;
+.background-image img {
   position: absolute;
-  width: 100%;
-  z-index: 5; }
-
-#events header {
-  background: url(images/tab-events.png) no-repeat;
-  color: #fff;
-  display: block;
-  float: left;
-  height: 21px;
-  margin-left: 417px;
-  padding-top: 3px;
-  text-align: center;
-  width: 150px; }
-
-#events header a {
-  color: #fff;
-  text-decoration: none; }
-
-#event-area {
-  background: url(images/header.png);
-  border-collapse: collapse;
-  border-top: 3px solid #000;
-  float: left;
-  height: 110px;
-  width: 100%; }
-
-#event-items ul {
-  margin: 0px; }
-
-#event-items li {
-  float: left;
-  list-style: none;
-  margin-left: 0px;
-  width: 241px; }
-
-#event-items li a {
-  color: #fff;
-  display: block;
-  height: 86px;
-  padding: 12px;
-  text-decoration: none;
-  width: 217px; }
-
-#event-items li a:hover {
-  background: #bd4929; }
-
-#event-items .title {
-  font-size: 28px;
-  height: 56px;
-  line-height: 1.1;
-  overflow: hidden;
-  text-transform: uppercase;
-  word-wrap: break-word; }
-
-#event-items .time, #event-items .location {
-  display: block;
-  float: left;
-  font-size: 14px;
-  height: 14px;
-  line-height: 14px;
-  padding-left: 15px;
-  margin: 5px 3px auto; }
-
-#event-items .time {
-  background: url(images/icon-time.png) no-repeat; }
-
-#event-items .location {
-  background: url(images/icon-location.png) no-repeat; }
-
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
