@@ -44,7 +44,8 @@ Feel free to use this script, fork it or redistribute it with any of your projec
 
 		$(function(){
 			$('.drawer').slideDrawer({
-				/* The drawer is hidden by default. It shows then slides down to let user know something is there. Set to true for it to show on load. */
+				/* The drawer is hidden by default. It shows then slides down to let user know something is there.
+				Set to true for it to show on load. */
 				showDrawer: false,
 				
 				/* Slide drawer speed. The speed that the drawer animates down or up */
@@ -56,7 +57,9 @@ Feel free to use this script, fork it or redistribute it with any of your projec
 				/* How long to wait before sliding drawer slides down. */
 				slideTimeoutCount: 5000,
 				
-				/* Div content height no including tab or border. Just the height of the content area. The plugin will pickup this height automatically from your css file but you can overwrite that with this setting. */
+				/* Div content height no including tab or border. Just the height of the content area.
+				The plugin will pick up this height automatically from your css file
+				but you can overwrite that with this setting. */
 				drawerContentHeight: drawerContentHeight,
 				 
 				/* Full div height pulls from height set in css but can be overwritten here. */
