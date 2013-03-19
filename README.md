@@ -30,14 +30,17 @@ Feel free to use this script, fork it or redistribute it with any of your projec
 
 ## File setup
 
-** CSS File ** - css/style.css
-** Images ** - images/bg.png (Only image here for transparent black background. Didn't want transparency in css because it makes images contained to be transparent as well)
-** JS Files ** - jquery.slidedrawer.js main plugin file and minified jquery.slidedrawer.min.js
-** Index File ** - for example usage
+**CSS File** - css/style.css
+
+**Images** - images/bg.png (Only image here for transparent black background. Didn't want transparency in css because it makes images contained to be transparent as well)
+
+**JS Files** - jquery.slidedrawer.js main plugin file and minified jquery.slidedrawer.min.js
+
+**Index File** - for example usage
 
 ## Plugin Settings
 	
-** Settings Explanation **
+**Settings Explanation**
 
 		$(function(){
 			$('.drawer').slideDrawer({
@@ -67,7 +70,7 @@ Feel free to use this script, fork it or redistribute it with any of your projec
 			});
 		});
 
-** Should look like: **
+**Should look like:**
 
 		$(function(){
 			$('.drawer').slideDrawer({
