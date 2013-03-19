@@ -7,16 +7,16 @@
 
 2. Include the following below the jquery script call:
 
-			<script>
-				$(function(){
-			});
-		</script>
+	<script>
+			$(function(){
+		});
+	</script>
 
 3. Or if your script is in the head of the html doc use:
 
-			<script>
-				$(document).ready(function(){
-					$('.drawer').slideDrawer();
-				});
-			</script>
+	<script>
+		$(document).ready(function(){
+		$('.drawer').slideDrawer();
+		});
+	</script>
 	
