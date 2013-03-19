@@ -7,16 +7,21 @@
 
 2. Include the following below the jquery script call:
 
-	<script>
+		<script>
 			$(function(){
-		});
-	</script>
+				$('.drawer').slideDrawer({
+					showDrawer: true,
+					slideTimeout: false
+				});
+			});
+			
+		</script>
 
 3. Or if your script is in the head of the html doc use:
 
-	<script>
-		$(document).ready(function(){
-		$('.drawer').slideDrawer();
-		});
-	</script>
+		<script>
+			$(document).ready(function(){
+				$('.drawer').slideDrawer();
+			});
+		</script>
 	
