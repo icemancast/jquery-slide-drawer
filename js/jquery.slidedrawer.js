@@ -1,11 +1,10 @@
-/*!
+/*
  * jQuery Slide Drawer
  * Examples and documentation at: http://www.icastwork.com
  * Copyright (c) 2013 Isaac Castillo
  * Version: 1.0 (28-FEB-2013)
- * Dual licensed under the MIT and GPL licenses.
- * http://www.icastwork.com/slidedrawer/license
- * Requires: jQuery v1.7.1 or later
+ * Licensed under the MIT license.
+ * Requires: jQuery v1.7.1 or later.
 */
 
 ;(function ($) {
@@ -48,26 +47,26 @@
 	};
 
 	// Function wrapper
-    $.fn.slideDrawer = function ( options ) {
-		
+  $.fn.slideDrawer = function ( options ) {
+	
 		var drawerContent = this.children('.drawer-content'), /* Content height of drawer */
 			borderHeight = parseInt(drawerContent.css('border-top-width')); /* Border height of content */
-		
+	
 		drawerHeight = this.height() + borderHeight; /* Total drawer height + border height */
 		drawerContentHeight = drawerContent.height() - borderHeight; /* Total drawer content height minus border top */
 		drawerHiddenHeight = drawerHeight - drawerContentHeight; /* How much to hide the drawer, total height minus content height */
-    
-	    var defaults = {
-				showDrawer: false, /* Drawer hidden on load by default */
-				slideSpeed: 700, /* Slide drawer speed 3 secs by default */
-				slideTimeout: true, /* Sets time out if set to true showDrawer false will be ignored */
-				slideTimeoutCount: 5000, /* How long to wait before sliding drawer */
-				drawerContentHeight: drawerContentHeight, /* Div content height no including tab or border */
-				drawerHeight: drawerHeight, /* Full div height */
-				drawerHiddenHeight: drawerHiddenHeight, /* Height of div when hidden full height minus content height */
-				borderHeight: borderHeight /* border height if set in css you cann overwrite but best just leave alone */
-	    };
-					
+  
+	  var defaults = {
+			showDrawer: false, /* Drawer hidden on load by default */
+			slideSpeed: 700, /* Slide drawer speed 3 secs by default */
+			slideTimeout: true, /* Sets time out if set to true showDrawer false will be ignored */
+			slideTimeoutCount: 5000, /* How long to wait before sliding drawer */
+			drawerContentHeight: drawerContentHeight, /* Div content height no including tab or border */
+			drawerHeight: drawerHeight, /* Full div height */
+			drawerHiddenHeight: drawerHiddenHeight, /* Height of div when hidden full height minus content height */
+			borderHeight: borderHeight /* border height if set in css you cann overwrite but best just leave alone */
+	  };
+				
 		/* Overwrite defaults */
 		var options = $.extend(defaults, options);
 		
