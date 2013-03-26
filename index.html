@@ -57,12 +57,14 @@
 	</section>
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.slidedrawer.js"></script>
+	<script type="text/javascript" src="js/jquery.slidedrawer.min.js"></script>
 	<script>
 	$(function(){
 		$('.drawer').slideDrawer({
 			showDrawer: true,
-			slideTimeout: false,
+			slideTimeout: true,
+			slideSpeed: 600,
+			slideTimeoutCount: 3000,
 		});
 	});
 	</script>
