@@ -1,0 +1,38 @@
+{
+    "name": "SlideDrawer",
+    "title": "jQuery Slide Drawer",
+    "description": "jQuery plugin for a slide drawer at the bottom of your page.",
+    "keywords": [
+        "toggle",
+        "animation",
+        "drawer",
+        "jquery",
+        "slide",
+        "timeOut"
+    ],
+    "version": "0.1.0",
+    "author": {
+        "name": "Isaac Castillo",
+        "url": "http://www.icastwork.com"
+    },
+    "maintainers": [
+        {
+            "name": "Isaac Castillo",
+            "email": "icemancast@gmail.com",
+            "url": "http://www.icastwork.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/icemancast/jquery-slide-drawer#license"
+        }
+    ],
+    "bugs": "https://github.com/icemancast/jquery-slide-drawer/issues",
+    "homepage": "http://www.icastwork.com/jquery-slide-drawer-plugin/",
+    "docs": "https://github.com/icemancast/jquery-slide-drawer#jquery-slide-drawer-readme",
+    "download": "https://github.com/icemancast/jquery-slide-drawer",
+    "dependencies": {
+        "jquery": ">=1.7.1"
+    }
+}

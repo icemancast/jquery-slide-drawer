@@ -2,7 +2,7 @@
  * jQuery Slide Drawer
  * Examples and documentation at: http://www.icastwork.com
  * Copyright (c) 2013 Isaac Castillo
- * Version: 0.1 (28-FEB-2013)
+ * Version: 0.1.0 (28-FEB-2013)
  * Licensed under the MIT license. https://github.com/icemancast/jquery-slide-drawer#license
  * Requires: jQuery v1.7.1 or later.
 */
