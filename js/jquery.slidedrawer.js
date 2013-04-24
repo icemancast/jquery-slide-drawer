@@ -2,7 +2,7 @@
  * jQuery Slide Drawer
  * Examples and documentation at: http://www.icastwork.com
  * Copyright (c) 2013 Isaac Castillo
- * Version: 0.1.0 (28-FEB-2013)
+ * Version: 0.1.1 (23-MAR-2013)
  * Licensed under the MIT license. https://github.com/icemancast/jquery-slide-drawer#license
  * Requires: jQuery v1.7.1 or later.
 */
@@ -20,12 +20,17 @@
 					drawer.slide(div, options.drawerHiddenHeight, options.slideSpeed);
 				}, options.slideTimeoutCount);
 			} 
-			else if(options.showDrawer == false)
+			else if(options.showDrawer == 'slide')
 			{
-				// Set drawer hidden on load
+				// Set drawer hidden with slide effect
 				drawer.slide(div, options.drawerHiddenHeight, options.slideSpeed);
 			}
-			
+			else if(options.showDrawer == false)
+			{
+				// Set drawer to hide
+				drawer.hide(options, div);
+			}
+
 			// Toggle drawer when clicked
 			$('.clickme').on('click', function(){
 				drawer.toggle(options, div);
@@ -43,6 +48,10 @@
 			$(div).animate({
 				'height': height
 			}, speed );
+		},
+
+		hide: function(options, div) {
+			$(div).css('height', options.drawerHiddenHeight);
 		}
 	};
 
@@ -57,7 +66,7 @@
 		drawerHiddenHeight = drawerHeight - drawerContentHeight; /* How much to hide the drawer, total height minus content height */
   
 	  var defaults = {
-			showDrawer: false, /* Drawer hidden on load by default */
+			showDrawer: 'slide', /* Drawer hidden on load by default, options (true, false, slide) */
 			slideSpeed: 700, /* Slide drawer speed 3 secs by default */
 			slideTimeout: true, /* Sets time out if set to true showDrawer false will be ignored */
 			slideTimeoutCount: 5000, /* How long to wait before sliding drawer */

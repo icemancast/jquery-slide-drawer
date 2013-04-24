@@ -45,7 +45,7 @@ Feel free to use this script, fork it or redistribute it with any of your projec
 		$(function(){
 			$('.drawer').slideDrawer({
 				/* The drawer is hidden by default. It shows then slides down to let user know something is there.
-				Set to true for it to show on load. */
+				Three options true, false, 'slide'. True shows on load, false hides on load, 'slide' shows and hides right away */
 				showDrawer: false,
 				
 				/* Slide drawer speed. The speed that the drawer animates down or up */
