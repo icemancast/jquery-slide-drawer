@@ -61,9 +61,9 @@
 		var drawerContent = this.children('.drawer-content'), /* Content height of drawer */
 			borderHeight = parseInt(drawerContent.css('border-top-width')); /* Border height of content */
 	
-		drawerHeight = this.height() + borderHeight; /* Total drawer height + border height */
-		drawerContentHeight = drawerContent.height() - borderHeight; /* Total drawer content height minus border top */
-		drawerHiddenHeight = drawerHeight - drawerContentHeight; /* How much to hide the drawer, total height minus content height */
+		var drawerHeight = this.height() + borderHeight; /* Total drawer height + border height */
+		var drawerContentHeight = drawerContent.height() - borderHeight; /* Total drawer content height minus border top */
+		var drawerHiddenHeight = drawerHeight - drawerContentHeight; /* How much to hide the drawer, total height minus content height */
   
 	  var defaults = {
 			showDrawer: 'slide', /* Drawer hidden on load by default, options (true, false, slide) */
