@@ -12,7 +12,7 @@ body {
 	z-index: 5; /* make this what you need to */
 }
 
-.drawer header {
+.drawer > header {
 	background: #000000; /* add image if you want */
 	color: #ffffff;
 	display: block;
