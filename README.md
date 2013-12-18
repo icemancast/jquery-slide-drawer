@@ -26,7 +26,7 @@ Feel free to use this script, fork it or redistribute it with any of your projec
 
 ## Demo
 
-[View Demo Here](http://icastwork.com/projects/jQuerySlideDrawer/)
+[View Demo Here](http://projects.icastwork.com/jQuerySlideDrawer/)
 
 ## File setup
 
